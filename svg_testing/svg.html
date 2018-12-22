@@ -1,8 +1,16 @@
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="svg.css">
 	<script>
+	function makeDrag() {
+		var img = document.getElementById("anubis_idol");
+		$(img).draggable();
+	}
+	
 	function makeDraggable(evt) {
+		console.log("Drag Function Entered");
+		
         var svg = evt.target;
 		
 		svg.addEventListener('touchstart', startDrag);
@@ -21,6 +29,7 @@
 		}
 		
         function startDrag(evt) {
+		  console.log("startDrag");
           if (evt.target.classList.contains('draggable')) {
             selectedElement = evt.target;
             offset = getMousePosition(evt);
@@ -54,18 +63,29 @@
           selectedElement = false;
         }
 	}
+
 	</script>
 </head>
-<body>
+<body onload="makeDrag();">
 
+<!--
 <svg viewBox="0 0 350 750">
-  <use xlink:href="./media/source_files/gods_svg/Anubis_standing.svg#anubis" … ></use>
+  <use xlink:href="Anubis_standing.svg#anubis"></use>
 </svg>
+I am having trouble referencing an external SVG hosted by a CDN. It looks like some kind of CORS issue. Here's the error that Chrome and Safari throw:
 
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
-		<rect class="draggable" x="0" y="0" width="10px" height="10px" fill="#cacaca"/>
-		
-	</svg>
+Unsafe attempt to load URL https://daveramsey-a.akamaihd.net/elp/ruby/dr-elp/assets/icons/icons-ab31b13cbcafb890891555dbf33843fe.svg from frame with URL https://www.daveramsey.com/elp/applicants/investing-prequalify. Domains, protocols and ports must match.
+
+Firefox just fails silently.
+
+
+Yes, it’s because <use> is asking for the resource as a kind of document, which is a no-no. One way to work around this is trigger the polyfill in every browser and setup your CDN to allow XMLHttpRequests.
+
+-->
+<div height="500px" width="700px" draggable="true">
+<!--<img src="Anubis_standing.svg" class="draggable" />-->
+	<img id="anubis_idol" src="./media/gods_png/anubis.png" class="draggable idol" onload="makeDraggable"/>
+</div>
 
 </body>
 </html>
