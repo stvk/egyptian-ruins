@@ -4,10 +4,11 @@ ul {
   display: inline-block;
   background: none;
   padding: 0;
-  border-bottom-color: black;
+  border-bottom-color: #777777;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  position:relative;
 }
 
 ul>li {
@@ -17,12 +18,13 @@ ul>li {
   padding: 5px 5px 0px 5px;
   display: inline-block;
   vertical-align: bottom;  /* Align the element at the bottom   */
+  bottom:0px;
 }
 
 .ul:after {
 	content: "";
 	display: inline-block;
-	height: 100%;            /* Let it be as height as the parent */
+	height: 100%;            /* Same height as the parent */
 	vertical-align: bottom;  /* Align the element at the bottom   */
 }
 
@@ -30,6 +32,7 @@ ul>li {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
 }
+
 
 div#container {
 	text-align:center;

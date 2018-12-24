@@ -1,0 +1,29 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Temple of the Gods</title>
+<script type="text/javascript" src="./lib.js"></script>
+<link rel="stylesheet" type="text/css" href="puzzle.css">
+
+<script type="text/javascript">
+const MESSAGE = `You are Chloe Keating, famous adventurer and celebrated code-breaker.
+
+After months of searching, you've arrived at the secret location known to house the Temple of the Gods.
+
+You hope to reveal the secret treasure described in your late professor's notebook. Dr. Jones gifted it to you in his will, in the hopes that you would succeed where he did not.
+
+Having taken a short rest at the bottom of the steep canyon that has miraculously hidden the temple for so long, you embark on the final part of your journey -- towards the temple entrance.
+`;
+</script>
+
+</head>
+<body 	style="background-color: #d7a371" 
+		onload="printLetters('messagebox1', MESSAGE, 50, function () { showDiv('messagebox2',2000) });">
+<div id="temple">
+	<div id="messagebox1" class="storytext">
+	</div>
+	<div id="messagebox2" class="storytext"><a href="./index2.html">CONTINUE >></a>
+	</div>
+</div>
+</body>
+</html>

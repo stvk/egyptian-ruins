@@ -24,3 +24,23 @@ function getUrlParam(parameter, defaultvalue){
     return urlparameter;
 }
 
+function printLetters(destination, message, speed, callback){
+    var i = 0;
+	document.getElementById(destination).innerHTML = ""
+    var interval = setInterval(function(){
+		if (message.charAt(i) == '\n')
+			document.getElementById(destination).innerHTML += '<br/>';
+        else
+			document.getElementById(destination).innerHTML += message.charAt(i);
+        i++;
+        if (i > message.length){
+            clearInterval(interval);
+			callback();
+        }
+    }, speed);
+}
+
+function showDiv(destination, delay) {
+	console.log('go og go');
+	setTimeout( function () { document.getElementById(destination).style.display = "block"; }, delay);
+}

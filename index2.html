@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Temple of the Gods</title>
+<script type="text/javascript" src="./lib.js"></script>
+<link rel="stylesheet" type="text/css" href="puzzle.css">
+
+<script type="text/javascript">
+const MESSAGE = `The temple appears to be blocked by a jumble of stone tiles.
+
+You notice that the tiles can be moved in place.
+
+The lines of the tiles remind you of a picture in Dr. Jones' notebook...`;
+</script>
+
+</head>
+<body 	style="background-color: #d7a371" 
+		onload="printLetters('messagebox1', MESSAGE, 50, function () { showDiv('messagebox2',2000) });">
+<div id="entrance">
+	<div id="messagebox1" class="storytext">
+	</div>
+	<div id="messagebox2" class="storytext"><a href="./2wegw.html">CONTINUE >></a>
+	</div>
+</div>
+</body>
+</html>

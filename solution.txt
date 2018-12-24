@@ -1,0 +1,70 @@
+horus	6			First came the God of gods, He of Skies and Kings
+	The head of a falcon
+	Conqueror of Set
+	God of the Sky/God of Kings
+
+thoth	5			Second came the wisest God, who sees and knows all things
+	The head of an ibis
+	God of widsom/writing/magic
+
+osiris	7			Third then came the abyssal god, judge of all who've died
+	Green skinned
+	Pharoh beard with Atef Crown
+	God/judge of the afterlife, underworld 
+
+shu	14				Fourth came the sailors' friend, who blew them far and wide
+	Feathered headdress
+	Holds the sky off the Earth
+	God of wind
+
+hathor	2			Fifth came a joyous laugh, the sun between her horns
+	Bears the sun between her horns
+	Primeval goddess from whom all others are derived
+	Goddess of beauty, music, dance, and joy
+	
+isis	15			Sixth came the mother divine, who's head the throne adorns
+	Headdress in the shape of a throne
+	Goddess of motherhood 
+	Divine mother of the Pharaoh
+
+serket	13			Seventh came the Scorpion queen, who cured the bitten-prone
+	Wears the Scorpion Crown
+	Goddess of nature and fertility
+	Protector against/currer of venom and snakebite
+	
+sekhmet	8			Eighth came the lioness, the fiercest hunter known
+	The head of a green lioness
+	Her breath formed the desert, most revered huntress in Egypt
+	Warrior goddess of healing
+
+set	9				Bested by the Falcon God, the ninth lashed out with violence
+	Head of an animal like no other
+	A black face, elongated snout and large ears
+	God of chaos, desert storms, violence
+	
+ptah	3			The tenth god thought a single thought, and the ninth returned to silence
+	Takes the form of a mummified man
+	By his will, *thought* the world into existance
+
+anubis	1			Eleventh came the speechless jackal, watchful of the dead
+	Head of a jackal
+	God of embalming and the dead
+	Watches over the dead
+
+khonsu	12			Twelveth then came the timekeeper, the moon atop his head
+	Headdress adorned with the moon-disc and green-skinned
+	God of the moon
+	He marks the passage of time
+
+tawaret	10			Thirtheenth came the hippo queen, with feline limbs and face
+	Bipedal Hippopotamus with limbs and face of a feline
+	Goddess of fertility and childbirth
+
+khnum	4			Fourteenth came the ram-head god, from the Nile did he trace 
+	Green-skinned, head of a ram
+	God of the source of the Nile
+
+maat	11			Finally came the weighing one, ever compelling truth. The stars and seasons did her will, and men would act in sooth. 
+	Feathered headress
+	Goddess of truth, balance, order and justice
+	Regulates the stars, seasons, and the actions of mortals and deities

@@ -1,5 +1,5 @@
 
-        const PUZZLE_DIFFICULTY = getUrlParam('difficulty',4);
+        const PUZZLE_DIFFICULTY = getUrlParam('difficulty',5);
         const PUZZLE_HOVER_TINT = '#009900';
 
         var _stage;
@@ -16,6 +16,20 @@
 		var _params;
         var _mouse;
 
+		/*pre-load the crumbling sound*/
+		crumbleAudio = new Audio('./media/Crumble_Loop.wav'); 
+		if (typeof crumbleAudio.loop == 'boolean')
+		{
+			crumbleAudio.loop = true;
+		}
+		else
+		{
+			crumbleAudio.addEventListener('ended', function() {
+				this.currentTime = 0;
+				this.play();
+			}, false);
+		}
+		
         function init(){
             _img = new Image();
             _img.addEventListener('load',onImage,false);
@@ -42,8 +56,8 @@
             _mouse = {x:0,y:0};
             _currentPiece = null;
             _currentDropPiece = null;
-            _stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight, 0, 0, _puzzleWidth, _puzzleHeight);
-			createTitle("Click to begin");
+            //_stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight, 0, 0, _puzzleWidth, _puzzleHeight);
+			//createTitle("Click to begin");
             buildPieces();
         }
         function createTitle(msg){
@@ -73,7 +87,8 @@
                     yPos += _pieceHeight;
                 }
             }
-            document.onmousedown = shufflePuzzle;
+            //document.onmousedown = shufflePuzzle;
+			shufflePuzzle();
         }
         function shufflePuzzle(){
             _pieces = shuffleArray(_pieces);
@@ -247,7 +262,11 @@
             document.onmousedown = null;
             document.onmousemove = null;
             document.onmouseup = null;
-            createTitle("Click to pick up tablet");
+            createTitle("The door begins to shake and crack open...");
+			setTimeout(function () { 	document.getElementById("container").className += " shaking";
+										crumbleAudio.play();
+										setTimeout(function () { document.location.replace('./6cofveve.html'); }, 4500);
+									}, 3000);
 			_canvas.removeEventListener("touchstart", onPuzzleTouch, false);
 			_canvas.removeEventListener("touchmove", updatePuzzleTouched, false);
 			_canvas.removeEventListener("touchend", pieceDropped, false);

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>jQuery Horizontal Sorting</title>
+	<title>The Idol Puzzle</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="googlebot" content="noindex, nofollow">
@@ -13,73 +13,24 @@
 	<script type="text/javascript" src="./touch.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="puzzle2.css">
+    <link rel="stylesheet" type="text/css" href="puzzle.css">
 
-	<script type="text/javascript">
-	const IDOL_COUNT = 15;
-	const WINNING_CONFIG = Array(1,3,2,4,5,6,7,8,9,10,11,12,13,14,15);
+	<script type="text/javascript" src="./idolpuzzle.js"></script>
+	<script type="text/javascript" src="./lib.js"></script>
 	
-    $(function(){
-      
-	$(".connectedSortable").sortable({
-		connectWith: ".connectedSortable",
-		receive: function (event, ui) {
-			var targetul = $(ui.item).parent().attr("id");
-			var targetno = parseInt(targetul.split("list-")[1]);
-			var sourceul = $(ui.sender).attr("id");
-			var sourceno = parseInt(sourceul.split("list-")[1]);
-
-			if (sourceno > targetno)
-			 rippleUp(targetno, sourceno);
-			else
-			 rippleDown(targetno, sourceno);
-		},
-		stop: function (event, ui) {
-			checkCompletion();
-		}
-	})
-	.disableSelection();
-
-  	function checkCompletion () {
-		var idols = document.getElementsByTagName("li");
-		for (var i=0; i<IDOL_COUNT; i++) {
-			if (idols[i].id.replace("li-","") != WINNING_CONFIG[i]) {
-				//console.log("mismatch: " + idols[i].id.replace("li-","") + " != " + WINNING_CONFIG[i]);
-				return false;
-			}
-			/*else {
-			console.log("ok: "+ idols[i].id.replace("li-","") + " == " + WINNING_CONFIG[i]);
-			}*/
-		}
-		console.log("success!");
-		
-		for (var i=0; i<IDOL_COUNT; i++) {
-			idols[i].childNodes[0].className += " shaking";
-		}
-		
-		return true;
-	}
-  
-	function rippleUp(start, end) {
-		for (var i=start;i<end;i++) {
-			 $("#list-"+i+" > li").last().prependTo("#list-"+(i+1));
-		}
-	}
-
-	function rippleDown(start, end) {
-		for (var i=start;i>end;i--) {
-			 $("#list-"+i+" > li").first().appendTo("#list-"+(i-1));
-		}
-	}
-
-	$(".connectedSortable").data("ui-sortable").floating = true;
-    });
+	<script type="text/javascript">
+	var MESSAGE=`After working your way through a maze of tunnels, you find yourself at a dead end.
+	In front of you are fifteen colourful stone idols; each idol representing an Egyptian god.
+	
+	You can't help but feel the order of the idols is important. Didn't Dr.Jones write something about this in his notebook?`
 	</script>
 </head>
-<body>
+<body 	style="background-color: #000000"
+		onload="printLetters('messagebox3', MESSAGE, 50, {});">
 
 <div id="container">
 <div id="puzzlecanvas">
+<div id="inneroverlay">
 <ul id="list-1" class="connectedSortable table shelf">
   <li id="li-1"><img src="./media/gods_png/anubis.png" id="anubis-idol" class="idol_img"></li>
   <li id="li-2"><img src="./media/gods_png/hathor.png" id="hathor-idol" class="idol_img"></li>
@@ -97,10 +48,13 @@
 <ul id="list-3" class="connectedSortable table shelf">
   <li id="li-11"><img src="./media/gods_png/maat.png" id="maat-idol" class="idol_img"></li>
   <li id="li-12"><img src="./media/gods_png/khonsu.png" id="khonsu-idol" class="idol_img"></li>
-  <li id="li-13"><img src="./media/gods_png/sekret.png" id="sekret-idol" class="idol_img"></li>
+  <li id="li-13"><img src="./media/gods_png/serket.png" id="serket-idol" class="idol_img"></li>
   <li id="li-14"><img src="./media/gods_png/shu.png" id="shu-idol" class="idol_img"></li>
   <li id="li-15"><img src="./media/gods_png/isis.png" id="isis-idol" class="idol_img"></li>
 </ul>
+<br />
+<div id="messagebox3" class="storytext"></div>
+</div>
 </div>	
 </div>
 

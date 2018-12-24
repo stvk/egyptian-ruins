@@ -1,0 +1,22 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Temple of the Gods</title>
+<script type="text/javascript" src="./lib.js"></script>
+<link rel="stylesheet" type="text/css" href="puzzle.css">
+
+<script type="text/javascript">
+const MESSAGE = `Back at the hotel (safe and sound) you take out the scroll from the now ruined temple.`;
+</script>
+
+</head>
+<body 	style="background-color: #d7a371" 
+		onload="printLetters('messagebox1', MESSAGE, 50, function () { showDiv('messagebox2',2000) });">
+<div id="hotel">
+	<div id="messagebox1" class="storytext">
+	</div>
+	<div id="messagebox2" class="storytext"><a href="./media/pbox.jpg">CLICK TO READ SCROLL>></a>
+	</div>
+</div>
+</body>
+</html>
