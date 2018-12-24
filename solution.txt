@@ -6,6 +6,7 @@ horus	6			First came the God of gods, He of Skies and Kings
 thoth	5			Second came the wisest God, who sees and knows all things
 	The head of an ibis
 	God of widsom/writing/magic
+	Sees and knows all
 
 osiris	7			Third then came the abyssal god, judge of all who've died
 	Green skinned

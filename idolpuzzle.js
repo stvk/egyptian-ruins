@@ -1,6 +1,6 @@
 const IDOL_COUNT = 15;
-const WINNING_CONFIG = Array(1,3,2,4,5,6,7,8,9,10,11,12,13,14,15);
-//const WINNING_CONFIG = Array(6,5,7,14,2,15,13,8,9,3,1,12,10,4,11);
+//const WINNING_CONFIG = Array(1,3,2,4,5,6,7,8,9,10,11,12,13,14,15);
+const WINNING_CONFIG = Array(6,5,7,14,2,15,13,8,9,3,1,12,10,4,11);
 
 /*pre-load the crumbling sound*/
 crumbleAudio = new Audio('./media/Crumble_Loop.wav'); 
